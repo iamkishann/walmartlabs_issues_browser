@@ -1,0 +1,140 @@
+
+.avatar {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+/* user information css */
+#user_login {
+  position: relative;
+  bottom: 15px;
+  font-weight: bold;
+}
+
+#user_login > a {
+  color: black;
+}
+
+#user_login > a:hover {
+  color: blue;
+}
+
+.user_information_item {
+  display: inline-block;
+  position: relative;
+  bottom: 15px;
+}
+
+#user_information {
+  text-align: left;
+}
+
+.crop {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* end user information css */
+
+#issue_body {
+  border: solid black 2px;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: beige; 
+  font-size: 11pt;
+  text-align: left;
+}
+
+#issue_title {
+  border-bottom: solid lightgray 2px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* TODO: add in a function that will change label text color
+  depending on background color 
+*/
+.label {
+  padding: 3px;
+  border-radius: 5px;
+  font-weight: normal;
+}
+
+/* table formatting */
+html {
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+td a:link, td a:visited {
+    color: black;
+}
+
+td a:hover {
+    color: blue;
+    text-decoration: inherit;
+}
+
+
+th {
+  background-color: rgb(220,220,220);
+  font-weight: bold;
+  font-size: 13pt;
+}
+
+td {
+  text-align: left;
+  font-weight: bold;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(240,240,240);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(250,250,250);
+}
+
+caption {
+  padding: 10px;
+}
+/* end table formatting */
+
+#site_description
+{
+    position: absolute;
+    top: 50px;
+    font-size: 15px;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Details for issue #{{ issue.number }}
+{% endblock %}
+
+{% block main %}
+<h2 id="issue_title">
+    {{ issue.title }}
+    <span style="color:gray">#{{ issue.number }}</span>
+    <span style="padding: 5px; border-radius: 25%; background-color:{% if issue.state == 'open' %}yellow{% else %}green{% endif %}">{{ issue.state }}</span>
+</h2>
+<div id="user_information">
+    {% if issue.user.avatar_url %}<div class="crop"><img class="avatar" src="{{ issue.user.avatar_url }}"/></div>{% endif %}
+    <div class="user_information_item" id="user_login">
+        <a href="{{ issue.user.html_url }}">{{ issue.user.login }}</a>
+    </div>
+    <div class="user_information_item"> wrote on {{ issue.created_at | format_time }}: </div>
+</div>
+
+<div id="issue_body">{{ issue.body|urlize|markdown }}</div>
+<br> 
+{% for comment in comments %}
+<div id="user_information">
+    {% if comment.user.avatar_url %}<div class="crop"><img class="avatar" src="{{ comment.user.avatar_url }}"/></div>{% endif %}
+    <div class="user_information_item" id="user_login">
+        <a href="{{ comment.user.html_url }}">{{ comment.user.login }}</a>
+    </div>
+    <div class="user_information_item"> wrote on {{ comment.created_at | format_time }}: </div>
+</div>
+
+<div id="issue_body">{{ comment.body|markdown|urlize }}</div>
+<br>
+{% endfor %}
+{% if issue.closed_at %}{{ issue.closed_at }}{% endif %}
+
+{% endblock %}
